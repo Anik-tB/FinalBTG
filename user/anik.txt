@@ -1,0 +1,7 @@
+anik,1
+resource,2,2,2
+gems,130
+weapon,350
+shield,1150
+cardPower,1500
+specialcard,3,4

@@ -1,0 +1,1037 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="912.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalbtg.ButtonHandler">
+    <children>
+        <ImageView fitHeight="624.0" fitWidth="912.0" opacity="0.82" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../image/bgi/bgi4.gif" />
+            </image>
+        </ImageView>
+
+        <Label fx:id="btgLabel" alignment="CENTER" layoutX="14.0" layoutY="110.0" prefHeight="112.0" prefWidth="513.0" text="Beyond The Galaxy" textFill="#eacdff">
+            <font>
+                <Font name="Britannic Bold" size="59.0" />
+            </font>
+        </Label>
+        <AnchorPane fx:id="upButtonAnchorPane" prefHeight="112.0" prefWidth="912.0">
+            <children>
+                <Button fx:id="chatButton" alignment="CENTER" focusTraversable="false" graphicTextGap="5.0" layoutX="22.0" layoutY="14.0" mnemonicParsing="false" onAction="#chatButtonAction" prefHeight="60.0" prefWidth="114.0" text="Chat">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/chat.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+
+                <Button fx:id="shopButton" alignment="CENTER" focusTraversable="false" graphicTextGap="5.0" layoutX="155.0" layoutY="14.0" mnemonicParsing="false" onAction="#shopButtonAction" prefHeight="60.0" prefWidth="122.0" text="Shop">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/shop.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="spaceshipButton" alignment="CENTER" focusTraversable="false" graphicTextGap="5.0" layoutX="298.0" layoutY="14.0" mnemonicParsing="false" onAction="#spaceshipButtonAction" prefHeight="60.0" prefWidth="180.0" text="SpaceShip">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/spaceship.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+
+                <Button fx:id="superCharacterButton" alignment="CENTER" focusTraversable="false" graphicTextGap="5.0" layoutX="500.0" layoutY="14.0" mnemonicParsing="false" onAction="#supercharacterButtonAction" prefHeight="60.0" prefWidth="229.0" text="Super Character">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="36.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/supercharacter.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button fx:id="profileButton" alignment="CENTER" focusTraversable="false" graphicTextGap="5.0" layoutX="751.0" layoutY="14.0" mnemonicParsing="false" onAction="#profileButtonAction" prefHeight="60.0" prefWidth="139.0" text="Profile">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/userprofile.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="downButtonAnchorPane" layoutY="524.0" prefHeight="100.0" prefWidth="912.0">
+            <children>
+                <Button fx:id="settingButton" focusTraversable="false" graphicTextGap="8.0" layoutX="42.0" layoutY="14.0" mnemonicParsing="false" onAction="#settingButtonAction" prefHeight="60.0" prefWidth="160.0" text="Settings">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/settings.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button fx:id="logOutButton" alignment="CENTER" focusTraversable="false" layoutX="260.0" layoutY="14.0" mnemonicParsing="false" onAction="#logOutButtonAction" prefHeight="60.0" prefWidth="160.0" text="Log Out">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/logout1.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+
+                <Button fx:id="pvpButton" alignment="CENTER" focusTraversable="false" graphicTextGap="10.0" layoutX="487.0" layoutY="14.0" mnemonicParsing="false" onAction="#pvpButtonAction" prefHeight="60.0" prefWidth="160.0" text="PvP">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/pvp.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button fx:id="loginPlayButton" alignment="CENTER" focusTraversable="false" layoutX="711.0" layoutY="14.0" mnemonicParsing="false" onAction="#loginPlayButtonAction" prefHeight="60.0" prefWidth="160.0" text="PLAY">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="60.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/start.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+        </AnchorPane>
+
+        <AnchorPane fx:id="profileAnchorPane" layoutX="271.0" layoutY="10.0" prefHeight="604.0" prefWidth="350.0" style="-fx-background-color: #013045; -fx-border-color: linear-gradient(to bottom, #9a00d7, #00b3ff); -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 3;" visible="false">
+            <children>
+                <Button fx:id="profileBackButton" alignment="CENTER" focusTraversable="false" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#profileBackButtonAction" prefHeight="50.0" prefWidth="65.0">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/return.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <ImageView fitHeight="38.0" fitWidth="37.0" layoutX="14.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../image/icon/guest.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="profileUsernameLabel" alignment="CENTER" layoutX="60.0" layoutY="95.0" prefHeight="38.0" prefWidth="278.0" style="-fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-color: #015F80; -fx-border-width: 2px; -fx-border-radius: 8;" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="134.0" layoutY="20.0" prefHeight="37.0" prefWidth="139.0" text="Profile" textFill="WHITE">
+                    <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="31.0" />
+                    </font>
+                </Label>
+                <Button fx:id="leaderboardButton" onAction="#leaderboardButtonAction" alignment="CENTER" focusTraversable="false" layoutX="80.0" layoutY="533.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="190.0" text="Leaderboard">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/ranking.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <ImageView fitHeight="38.0" fitWidth="37.0" layoutX="15.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../image/icon/trophy.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="gemLabel" alignment="CENTER" layoutX="60.0" layoutY="149.0" prefHeight="38.0" prefWidth="166.0" style="-fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-color: #015F80; -fx-border-width: 2px; -fx-border-radius: 8;" text="0" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="37.0" fitWidth="26.0" layoutX="20.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../image/icon/ranking.png" />
+                    </image>
+                </ImageView>
+                <Label alignment="CENTER" layoutX="60.0" layoutY="247.0" prefHeight="38.0" prefWidth="166.0" style="-fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-color: #015F80; -fx-border-width: 2px; -fx-border-radius: 8;" text="--" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="191.0" layoutY="418.0" prefHeight="38.0" prefWidth="122.0" style="-fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-color: #015F80; -fx-border-width: 2px; -fx-border-radius: 8;" text="0" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="191.0" layoutY="471.0" prefHeight="38.0" prefWidth="122.0" style="-fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-color: #015F80; -fx-border-width: 2px; -fx-border-radius: 8;" text="0" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="191.0" layoutY="365.0" prefHeight="38.0" prefWidth="122.0" style="-fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-color: #015F80; -fx-border-width: 2px; -fx-border-radius: 8;" text="0" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="114.0" layoutY="315.0" prefHeight="34.0" prefWidth="122.0" style="-fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-color: #015F80; -fx-border-width: 2px; -fx-border-radius: 8;" text="PvP Info :" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="46.0" layoutY="367.0" prefHeight="34.0" prefWidth="122.0" style="-fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-color: #015F80; -fx-border-width: 2px; -fx-border-radius: 8;" text="Played -&gt;" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="46.0" layoutY="418.0" prefHeight="34.0" prefWidth="122.0" style="-fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-color: #015F80; -fx-border-width: 2px; -fx-border-radius: 8;" text="Win -&gt;" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="46.0" layoutY="473.0" prefHeight="34.0" prefWidth="122.0" style="-fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-color: #015F80; -fx-border-width: 2px; -fx-border-radius: 8;" text="Loss -&gt;" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="37.0" fitWidth="26.0" layoutX="20.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../image/icon/gem.png" />
+                    </image>
+                </ImageView>
+                <Label alignment="CENTER" layoutX="60.0" layoutY="198.0" prefHeight="38.0" prefWidth="166.0" style="-fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-color: #015F80; -fx-border-width: 2px; -fx-border-radius: 8;" text="0" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+
+
+        <AnchorPane fx:id="settingAnchorPane" layoutX="14.0" layoutY="255.0" prefHeight="355.0" prefWidth="215.0" visible="false">
+            <children>
+                <Button fx:id="settingReturnButton" focusTraversable="false" graphicTextGap="10.0" layoutX="28.0" layoutY="281.0" mnemonicParsing="false" onAction="#settingReturnButtonAction" prefHeight="60.0" prefWidth="160.0" text="Back">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/return.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="musicButton" focusTraversable="false" graphicTextGap="10.0" layoutX="28.0" layoutY="205.0" mnemonicParsing="false" onAction="#musicButtonAction" prefHeight="60.0" prefWidth="160.0" text="Music">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fx:id="musicImage" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/music.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="soundButton" focusTraversable="false" graphicTextGap="10.0" layoutX="28.0" layoutY="124.0" mnemonicParsing="false" onAction="#soundButtonAction" prefHeight="60.0" prefWidth="160.0" text="Sound">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fx:id="soundImage" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/sound.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="languageButton" focusTraversable="false" graphicTextGap="10.0" layoutX="18.0" layoutY="39.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="180.0" text="Language">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/language.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+        </AnchorPane>
+
+
+        <AnchorPane fx:id="chatAnchorPane" layoutX="271.0" layoutY="10.0" prefHeight="604.0" prefWidth="350.0" style="-fx-background-color: #013045; -fx-border-color: linear-gradient(to bottom, #9a00d7, #00b3ff); -fx-border-width: 3; -fx-background-radius: 20; -fx-border-radius: 20;" visible="false">
+            <children>
+                <ScrollPane fx:id="chatScrollPane" fitToWidth="true" layoutX="8.0" layoutY="88.0" prefHeight="419.0" prefWidth="334.0" style="-fx-background: transparent; -fx-background-color: #011b26; -fx-border-color: #015F80; -fx-border-width: 2px; -fx-background-radius: 8; -fx-border-radius: 8;">
+                    <content>
+                        <VBox fx:id="chatVbox" prefHeight="26.0" prefWidth="328.0" style="-fx-background-color: transparent; -fx-background-radius: 20;">
+
+                        </VBox>
+                    </content>
+                </ScrollPane>
+                <Label alignment="CENTER" layoutX="127.0" layoutY="14.0" prefHeight="49.0" prefWidth="150.0" text="Chat Box" textFill="#FFFFFF">
+                    <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="31.0" />
+                    </font>
+                </Label>
+                <Button fx:id="chatBackButton" alignment="CENTER" focusTraversable="false" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#chatBackButtonAction" prefHeight="50.0" prefWidth="65.0">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/return.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="chatSentButton" alignment="CENTER" focusTraversable="false" layoutX="269.0" layoutY="531.0" mnemonicParsing="false" onAction="#chatSentButtonAction" prefHeight="42.0" prefWidth="64.0">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/sent.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <TextField fx:id="chatTextField" focusTraversable="false" layoutX="8.0" layoutY="530.0" prefHeight="50.0" prefWidth="251.0" style="-fx-background-color: #011b26; -fx-border-color: #015F80; -fx-border-width: 2px; -fx-text-fill: #FFFFFF; -fx-prompt-text-fill: #A8DADC; -fx-border-radius: 8; -fx-background-radius: 8;">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font></TextField>
+            </children>
+        </AnchorPane>
+
+
+
+
+
+        <AnchorPane fx:id="spaceshipAnchorpane" layoutX="221.0" layoutY="44.0" prefHeight="537.0" prefWidth="450.0" style="-fx-background-color: #013045; -fx-border-color: linear-gradient(to bottom, #9a00d7, #00b3ff); -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 3;" visible="false">
+            <children>
+                <ImageView fitHeight="100.0" fitWidth="230.0" layoutX="123.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../image/spaceship2.png" />
+                    </image>
+                </ImageView>
+                <Label alignment="CENTER" layoutX="283.0" layoutY="47.0" prefHeight="34.0" prefWidth="139.0" style="-fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-color: #015F80; -fx-border-width: 2px; -fx-border-radius: 8;" text="Level 1" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                    </font>
+                </Label>
+                <Button fx:id="spaceshipBackButton" alignment="CENTER" focusTraversable="false" layoutX="21.0" layoutY="22.0" mnemonicParsing="false" onAction="#spaceshipBackButtonAction" prefHeight="50.0" prefWidth="65.0">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/return.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button alignment="CENTER" focusTraversable="false" layoutX="291.0" layoutY="450.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="122.0" text="Upgrade">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                </Button>
+                <ImageView fitHeight="60.0" fitWidth="66.0" layoutX="24.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../image/communication.png" />
+                    </image>
+                </ImageView>
+                <Label alignment="CENTER" layoutX="99.0" layoutY="195.0" prefHeight="34.0" prefWidth="180.0" style="-fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-color: #015F80; -fx-border-width: 2px; -fx-border-radius: 8;" text="Communication device" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="24.0" layoutY="267.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../image/engine.png" />
+                    </image>
+                </ImageView>
+                <Label alignment="CENTER" layoutX="135.0" layoutY="280.0" prefHeight="34.0" prefWidth="107.0" style="-fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-color: #015F80; -fx-border-width: 2px; -fx-border-radius: 8;" text="Engine" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="131.0" layoutY="367.0" prefHeight="34.0" prefWidth="114.0" style="-fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-color: #015F80; -fx-border-width: 2px; -fx-border-radius: 8;" text="Control Panel" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="60.0" fitWidth="66.0" layoutX="24.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../image/controller.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="label1" alignment="CENTER" layoutX="296.0" layoutY="195.0" prefHeight="34.0" prefWidth="114.0" style="-fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-color: #015F80; -fx-border-width: 2px; -fx-border-radius: 8;" text="0/10" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="label2" alignment="CENTER" layoutX="296.0" layoutY="280.0" prefHeight="34.0" prefWidth="114.0" style="-fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-color: #015F80; -fx-border-width: 2px; -fx-border-radius: 8;" text="0/10" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="label3" alignment="CENTER" layoutX="296.0" layoutY="367.0" prefHeight="34.0" prefWidth="114.0" style="-fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-color: #015F80; -fx-border-width: 2px; -fx-border-radius: 8;" text="0/10" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" contentDisplay="RIGHT" graphicTextGap="0.0" layoutX="38.0" layoutY="457.0" prefHeight="34.0" prefWidth="221.0" style="-fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-color: #015F80; -fx-border-width: 2px; -fx-border-radius: 8;" text="Upgradation requires 100 " textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/gem.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Label>
+            </children>
+        </AnchorPane>
+
+
+
+        <AnchorPane fx:id="supercharacterAnchorpane" layoutX="218.0" layoutY="27.0" prefHeight="570.0" prefWidth="457.0" style="-fx-background-color: #013045; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: linear-gradient(to bottom, #9a00d7, #00b3ff); -fx-border-width: 3;" visible="false">
+            <children>
+                <Button fx:id="supercharacterBackButton" alignment="CENTER" focusTraversable="false" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#supercharacterBackButtonAction" prefHeight="50.0" prefWidth="65.0">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/return.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Label alignment="CENTER" layoutX="153.0" layoutY="111.0" prefHeight="34.0" prefWidth="82.0" style="-fx-border-color: #015F80; -fx-border-radius: 8; -fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-width: 2;" text="Power :" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="17.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="124.0" layoutY="14.0" prefHeight="50.0" prefWidth="222.0" style="-fx-border-color: white; -fx-border-radius: 8; -fx-background-color: #011b26;" text="Super Character" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="27.0" />
+                    </font>
+                </Label>
+                <Label fx:id="superCharacterPower" alignment="CENTER" layoutX="127.0" layoutY="157.0" prefHeight="34.0" prefWidth="134.0" style="-fx-border-color: #015F80; -fx-border-radius: 8; -fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-width: 2;" text="0" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="17.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="18.0" layoutY="329.0" prefHeight="94.0" prefWidth="100.0" style="-fx-border-color: #015F80; -fx-border-radius: 8; -fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-width: 2;" textAlignment="RIGHT" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italicsize" size="17.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="67.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/shield.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Label>
+                <Label fx:id="shieldPower" alignment="CENTER" layoutX="128.0" layoutY="388.0" prefHeight="34.0" prefWidth="133.0" style="-fx-border-color: #015F80; -fx-border-radius: 8; -fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-width: 2;" text="0" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="17.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="153.0" layoutY="342.0" prefHeight="34.0" prefWidth="82.0" style="-fx-border-color: #015F80; -fx-border-radius: 8; -fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-width: 2;" text="Power :" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="17.0" />
+                    </font>
+                </Label>
+                <Label fx:id="weaponPower" alignment="CENTER" layoutX="128.0" layoutY="278.0" prefHeight="34.0" prefWidth="133.0" style="-fx-border-color: #015F80; -fx-border-radius: 8; -fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-width: 2;" text="0" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="17.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="153.0" layoutY="231.0" prefHeight="34.0" prefWidth="82.0" style="-fx-border-color: #015F80; -fx-border-radius: 8; -fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-width: 2;" text="Power :" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="17.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="18.0" layoutY="90.0" prefHeight="112.0" prefWidth="100.0" style="-fx-border-color: #015F80; -fx-border-radius: 8; -fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-width: 2;" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="17.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="85.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/supercharacter.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Label>
+                <Label alignment="CENTER" layoutX="18.0" layoutY="219.0" prefHeight="94.0" prefWidth="100.0" style="-fx-border-color: #015F80; -fx-border-radius: 8; -fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-width: 2;" textAlignment="RIGHT" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="17.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="65.0" fitWidth="82.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/weapon.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Label>
+                <Label fx:id="specialCardLabel" alignment="CENTER" layoutX="18.0" layoutY="435.0" prefHeight="112.0" prefWidth="100.0" style="-fx-border-color: #015F80; -fx-border-radius: 8; -fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-width: 2;" textAlignment="RIGHT" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="17.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fx:id="specialCardImg" fitHeight="83.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true" />
+                    </graphic>
+                </Label>
+                <Button fx:id="cardStorageButton" alignment="CENTER" focusTraversable="false" layoutX="271.0" layoutY="496.0" mnemonicParsing="false" onAction="#cardStorageButtonAction" prefHeight="34.0" prefWidth="166.0" text="Special Cards">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/abilityCard.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Label alignment="CENTER" layoutX="153.0" layoutY="456.0" prefHeight="34.0" prefWidth="82.0" style="-fx-border-color: #015F80; -fx-border-radius: 8; -fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-width: 2;" text="Power :" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="17.0" />
+                    </font>
+                </Label>
+                <Label fx:id="specialCardPower" alignment="CENTER" layoutX="128.0" layoutY="499.0" prefHeight="34.0" prefWidth="134.0" style="-fx-border-color: #015F80; -fx-border-radius: 8; -fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-width: 2;" text="0" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="17.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="305.0" layoutY="111.0" prefHeight="34.0" prefWidth="98.0" style="-fx-border-color: #015F80; -fx-border-radius: 8; -fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-width: 2;" text="Ability : " textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="17.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="304.0" layoutY="157.0" prefHeight="298.0" prefWidth="100.0" style="-fx-border-color: #015F80; -fx-border-radius: 8; -fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-width: 2;" textAlignment="RIGHT" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="17.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+
+
+        <AnchorPane fx:id="shopAnchorPane" layoutX="96.0" layoutY="56.0" prefHeight="523.0" prefWidth="721.0" style="-fx-background-color: #013045; -fx-border-color: linear-gradient(to bottom, #9a00d7, #00b3ff); -fx-border-width: 3; -fx-background-radius: 30; -fx-border-radius: 30;" visible="false">
+            <children>
+                <Button fx:id="shopBackButton" alignment="CENTER" focusTraversable="false" layoutX="24.0" layoutY="15.0" mnemonicParsing="false" onAction="#shopBackButtonAction" prefHeight="42.0" prefWidth="66.0">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="28.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/return.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="shopSellButton" alignment="CENTER" focusTraversable="false" layoutX="564.0" layoutY="17.0" mnemonicParsing="false" onAction="#shopSellButtonAction" prefHeight="38.0" prefWidth="134.0" text="sell">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Button>
+                <Label alignment="CENTER" layoutX="108.0" layoutY="14.0" prefHeight="44.0" prefWidth="150.0" style="-fx-border-color: white; -fx-border-radius: 8; -fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-width: 2;" text="Market" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="17.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="305.0" layoutY="14.0" prefHeight="44.0" prefWidth="114.0" style="-fx-border-color: white; -fx-border-radius: 8; -fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-width: 2;" text="Gems : " textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="17.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/gem.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Label>
+                <Label fx:id="shopGemsLabel" alignment="CENTER" layoutX="428.0" layoutY="14.0" prefHeight="44.0" prefWidth="114.0" style="-fx-border-color: white; -fx-border-radius: 8; -fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-width: 2;" text="0" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="17.0" />
+                    </font>
+                </Label>
+                <AnchorPane fx:id="shopStore" layoutX="25.0" layoutY="78.0" prefHeight="427.0" prefWidth="674.0" style="-fx-background-color: #011b26; -fx-border-color: white; -fx-border-width: 3; -fx-background-radius: 30; -fx-border-radius: 30;">
+                    <ScrollPane fx:id="shopScrollPane" fitToWidth="true" layoutX="14.0" layoutY="10.0" prefHeight="404.0" prefWidth="647.0" style="-fx-background-color: #011b26;">
+                        <GridPane fx:id="itemGridPane" alignment="CENTER" hgap="10.0" prefHeight="426.0" prefWidth="659.0" style="-fx-background-color: #011b26;" vgap="10.0">
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+                        </GridPane>
+                    </ScrollPane>
+                </AnchorPane>
+
+
+
+                <AnchorPane fx:id="sellAnchorPane" layoutX="25.0" layoutY="78.0" prefHeight="427.0" prefWidth="674.0" style="-fx-background-color: #011b26; -fx-border-color: white; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-width: 3;" visible="false">
+                    <children>
+                        <Button fx:id="sellBackButton" alignment="CENTER" focusTraversable="false" layoutX="259.0" layoutY="357.0" mnemonicParsing="false" onAction="#sellBackButtonAction" prefHeight="42.0" prefWidth="160.0" visible="true">
+                            <style>
+                                -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                                -fx-text-fill: white;
+                                -fx-font-weight: bold;
+                                -fx-border-color: #FFFFFF;
+                                -fx-border-width: 2px;
+                                -fx-border-radius: 15px;
+                                -fx-background-radius: 15px;
+                                -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                            </style>
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="28.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../image/icon/return.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button></children>
+                </AnchorPane>
+
+
+
+                <AnchorPane fx:id="setPriceAnchorPane" layoutX="164.0" layoutY="159.0" prefHeight="254.0" prefWidth="401.0" style="-fx-background-color: #011b26; -fx-border-color: white; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-width: 3;" visible="false">
+                    <children>
+                        <Button fx:id="setPriceBackButton" alignment="CENTER" focusTraversable="false" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#setPriceBackButtonAction" prefHeight="42.0" prefWidth="66.0">
+                            <style>
+                                -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                                -fx-text-fill: white;
+                                -fx-font-weight: bold;
+                                -fx-border-color: #FFFFFF;
+                                -fx-border-width: 2px;
+                                -fx-border-radius: 15px;
+                                -fx-background-radius: 15px;
+                                -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                            </style>
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="28.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../image/icon/return.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Label alignment="CENTER" layoutX="107.0" layoutY="50.0" prefHeight="44.0" prefWidth="186.0" style="-fx-border-color: white; -fx-border-radius: 8; -fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-width: 2;" text="Set Your Price" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold Italic" size="17.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="setPriceTextField" alignment="CENTER" layoutX="119.0" layoutY="120.0" prefHeight="44.0" prefWidth="163.0" promptText="Enter price (gems)" style="-fx-background-color: #013045; -fx-border-color: #015F80; -fx-border-width: 2px; -fx-text-fill: #FFFFFF; -fx-prompt-text-fill: #A8DADC; -fx-border-radius: 8; -fx-background-radius: 8;">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </TextField>
+                        <Button fx:id="sellItemButton" alignment="CENTER" focusTraversable="false" layoutX="119.0" layoutY="191.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="163.0" text="Set on Sale">
+                            <style>
+                                -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                                -fx-text-fill: white;
+                                -fx-font-weight: bold;
+                                -fx-border-color: #FFFFFF;
+                                -fx-border-width: 2px;
+                                -fx-border-radius: 15px;
+                                -fx-background-radius: 15px;
+                                -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                            </style>
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+
+            </children>
+        </AnchorPane>
+
+
+
+
+
+        <AnchorPane fx:id="cardsAnchorPane" layoutX="218.0" layoutY="27.0" prefHeight="570.0" prefWidth="457.0" style="-fx-background-color: #011b26; -fx-border-color: white; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-width: 3;" visible="false">
+            <children>
+                <Button fx:id="cardsBackButton" alignment="CENTER" focusTraversable="false" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#cardsBackButtonAction" prefHeight="42.0" prefWidth="66.0" visible="true">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="28.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/return.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            <AnchorPane fx:id="cardsAnchorPaneHolder" layoutX="11.0" layoutY="69.0" prefHeight="490.0" prefWidth="435.0" style="-fx-background-color: black; -fx-border-color: white; -fx-background-radius: 30; -fx-border-radius: 30;" />
+            <Label alignment="CENTER" layoutX="131.0" layoutY="13.0" prefHeight="44.0" prefWidth="215.0" style="-fx-border-color: white; -fx-border-radius: 8; -fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-width: 2;" text="Your Special Cards" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="17.0" />
+               </font>
+            </Label></children>
+        </AnchorPane>
+      <AnchorPane fx:id="leaderboardAnchorPane" layoutX="231.0" layoutY="20.0" prefHeight="585.0" prefWidth="450.0" style="-fx-background-color: #011b26; -fx-border-color: linear-gradient(to bottom, #9a00d7, #00b3ff); -fx-background-radius: 33; -fx-border-radius: 30; -fx-border-width: 3;" visible="false">
+         <children>
+            <ScrollPane layoutX="37.0" layoutY="86.0" prefHeight="458.0" prefWidth="376.0" style="-fx-background-color: black;">
+              <content>
+                <AnchorPane fx:id="leaderboardHolder" minHeight="0.0" minWidth="0.0" prefHeight="478.0" prefWidth="360.0" style="-fx-background-color: #011b26;" />
+              </content>
+            </ScrollPane>
+            <Button fx:id="leaderboardBackButton"  alignment="CENTER" focusTraversable="false" layoutX="22.0" layoutY="20.0" mnemonicParsing="false" onAction="#leaderboardBackButtonAction" prefHeight="42.0" prefWidth="66.0" visible="true">
+                <style>
+                    -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                    -fx-text-fill: white;
+                    -fx-font-weight: bold;
+                    -fx-border-color: #FFFFFF;
+                    -fx-border-width: 2px;
+                    -fx-border-radius: 15px;
+                    -fx-background-radius: 15px;
+                    -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                </style>
+                <font>
+                    <Font size="15.0" />
+                </font>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../image/icon/return.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+
+        <AnchorPane fx:id="pvpWaitingAnchorPane" prefHeight="624.0" prefWidth="912.0" style="-fx-background-color: black; -fx-border-color: white; -fx-border-width: 2;" visible="false">
+            <children>
+                <Label alignment="CENTER" layoutX="181.0" layoutY="80.0" prefHeight="88.0" prefWidth="550.0" style="-fx-border-color: white; -fx-border-radius: 8; -fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-width: 2;" text="Searching opponent..............." textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="29.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="348.0" fitWidth="382.0" layoutX="282.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../image/waitingGif.gif" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+
+    </children>
+</Pane>

@@ -1,0 +1,7 @@
+rubayet,1
+resource,9,8,7
+gems,350
+weapon,550
+shield,1450
+cardPower,1500
+specialcard,1,2,3,6

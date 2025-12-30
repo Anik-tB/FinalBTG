@@ -1,0 +1,7 @@
+zubear,1
+resource,0,1,2
+gems,39
+weapon,400
+shield,1050
+cardPower,1200
+specialcard,3

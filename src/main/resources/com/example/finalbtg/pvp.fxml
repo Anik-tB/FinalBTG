@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalbtg.PvpController">
+    <children>
+        <AnchorPane fx:id="pvpWorld" layoutX="0.0" layoutY="0.0" prefHeight="624.0" prefWidth="912.0" style="-fx-background-color: black;">
+            <children>
+                <ImageView fx:id="mainCharacterImage" fitHeight="32.0" fitWidth="32.0" layoutX="144.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../image/sprite/down2.png" />
+                    </image>
+                </ImageView>
+            <ImageView fx:id="opponentCharacterImage" fitHeight="32.0" fitWidth="32.0" layoutX="760.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../image/sprite/down2.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="mainCharacterProjectile" fitHeight="32.0" fitWidth="32.0" layoutX="144.0" layoutY="316.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../image/monsterProjectile.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="opponentCharacterProjectile" fitHeight="32.0" fitWidth="32.0" layoutX="760.0" layoutY="316.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../image/monsterProjectile.png" />
+               </image>
+            </ImageView>
+            </children>
+        </AnchorPane>
+
+
+
+
+        <Button fx:id="exitButton" focusTraversable="false" layoutX="5.0" layoutY="5.0" mnemonicParsing="false" onAction="#exitButtonAction" prefHeight="63.0" prefWidth="70.0">
+            <style>
+                -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                -fx-text-fill: white;
+                -fx-font-weight: bold;
+                -fx-border-color: #FFFFFF;
+                -fx-border-width: 2px;
+                -fx-border-radius: 15px;
+                -fx-background-radius: 15px;
+                -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+            </style>
+            <font>
+                <Font name="Orbitron Bold Italic" size="21.0" />
+            </font>
+            <graphic>
+                <ImageView fitHeight="38.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../image/icon/logout1.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+
+
+
+        <AnchorPane fx:id="exitConfirmAnchorPane" layoutX="306.0" layoutY="212.0" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #013045; -fx-border-color: linear-gradient(to bottom, #9a00d7, #00b3ff); -fx-border-width: 3; -fx-background-radius: 20; -fx-border-radius: 20;" visible="false">
+            <children>
+                <Label alignment="CENTER" layoutX="13.0" layoutY="14.0" prefHeight="50.0" prefWidth="274.0" text="Are you sure you want to Exit?" textFill="WHITE">
+                    <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+                    </font>
+                </Label>
+                <Button fx:id="exitYesButton" focusTraversable="false" layoutX="47.0" layoutY="122.0" mnemonicParsing="false" onAction="#exitYesButtonAction" prefHeight="50.0" prefWidth="70.0" text="Yes">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                </Button>
+                <Button fx:id="exitNoButton" focusTraversable="false" layoutX="177.0" layoutY="122.0" mnemonicParsing="false" onAction="#exitNoButtonAction" prefHeight="50.0" prefWidth="70.0" text="No">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                </Button>
+                <Label alignment="CENTER" layoutX="13.0" layoutY="60.0" prefHeight="39.0" prefWidth="274.0" text="You'll lost the current match...." textFill="WHITE">
+                    <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+
+      
+
+      
+        <AnchorPane fx:id="playerConditionAnchorPane" layoutX="10.0" layoutY="568.0" opacity="0.9" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #013045; -fx-background-radius: 20; -fx-border-color: linear-gradient(to bottom, #9a00d7, #00b3ff); -fx-border-width: 3; -fx-border-radius: 20;">
+            <children>
+                <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="201.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../image/icon/health.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="healthLabel" alignment="CENTER" layoutX="233.0" layoutY="12.0" prefHeight="30.0" prefWidth="60.0" text="1200" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="109.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../image/icon/attackpower.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="attackPowerLabel" alignment="CENTER" layoutX="141.0" layoutY="12.0" prefHeight="30.0" prefWidth="60.0" text="100" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                    </font>
+                </Label>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="11.0" prefHeight="28.0" prefWidth="88.0" style="-fx-border-color: white; -fx-border-radius: 8;" text="ID : 1" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+      <AnchorPane fx:id="opponentConditionAnchorPane1" layoutX="565.0" layoutY="568.0" opacity="0.9" prefHeight="50.0" prefWidth="337.0" style="-fx-background-color: #013045; -fx-background-radius: 20; -fx-border-color: linear-gradient(to bottom, #9a00d7, #00b3ff); -fx-border-width: 3; -fx-border-radius: 20;">
+         <children>
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="239.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../image/icon/health.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="opponentHealthLabel" alignment="CENTER" layoutX="271.0" layoutY="10.0" prefHeight="30.0" prefWidth="60.0" text="1200" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="143.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../image/icon/attackpower.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="opponentAttackPowerLabel" alignment="CENTER" layoutX="179.0" layoutY="10.0" prefHeight="30.0" prefWidth="60.0" text="100" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="10.0" prefHeight="28.0" prefWidth="123.0" style="-fx-border-color: white; -fx-border-radius: 8;" text="ID : 2" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+        <AnchorPane fx:id="youWinAnchorPane" layoutX="206.0" layoutY="212.0" prefHeight="200.0" prefWidth="500.0" style="-fx-background-color: #013045;                            -fx-border-color: linear-gradient(to bottom, #9a00d7, #00b3ff);                            -fx-border-width: 3; -fx-background-radius: 20;                            -fx-border-radius: 20;" visible="false">
+            <children>
+                <Label alignment="CENTER" layoutX="14.0" layoutY="27.0" prefHeight="61.0" prefWidth="472.0" text="YOU WIN!" textFill="WHITE">
+                    <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="36.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="14.0" layoutY="106.0" prefHeight="39.0" prefWidth="472.0" text="Congratulations! You have defeated your opponent." textFill="WHITE">
+                    <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+                    </font>
+                </Label>
+
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="youLoseAnchorPane" layoutX="206.0" layoutY="212.0" prefHeight="200.0" prefWidth="500.0" style="-fx-background-color: #013045;                            -fx-border-color: linear-gradient(to bottom, #9a00d7, #00b3ff);                            -fx-border-width: 3; -fx-background-radius: 20;                            -fx-border-radius: 20;" visible="false">
+            <children>
+                <Label alignment="CENTER" layoutX="14.0" layoutY="27.0" prefHeight="61.0" prefWidth="472.0" text="YOU LOSE!" textFill="WHITE">
+                    <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="36.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="14.0" layoutY="106.0" prefHeight="39.0" prefWidth="472.0" text="Better luck next time!" textFill="WHITE">
+                    <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+
+
+    </children>
+</Pane>

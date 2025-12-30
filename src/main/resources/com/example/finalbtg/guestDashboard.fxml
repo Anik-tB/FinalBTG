@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="912.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalbtg.ButtonHandler">
+    <children>
+        <ImageView fitHeight="624.0" fitWidth="912.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../image/bgi/bgi2.gif" />
+            </image>
+        </ImageView>
+        <!-- Sidebar for game info -->
+        <AnchorPane prefHeight="624.0" prefWidth="912.0" style="-fx-border-color: linear-gradient(to bottom, #9a00d7, #00b3ff); -fx-border-width: 3;">
+            <children>
+                <Label alignment="CENTER" layoutX="173.0" prefHeight="99.0" prefWidth="566.0" text="Beyond The Galaxy" textFill="#fbc3ff">
+                    <font>
+                        <Font name="Britannic Bold" size="65.0" />
+                    </font>
+                </Label>
+                <!-- PLAY Button -->
+                <Button fx:id="guestPlayButton" focusTraversable="false" graphicTextGap="15.0" layoutX="701.0" layoutY="496.0" mnemonicParsing="false" onAction="#guestPlayButtonAction" prefHeight="50.0" prefWidth="158.0" text="Play">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="33.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/start.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <!-- Return Button -->
+                <Button fx:id="guestReturnButton" alignment="CENTER" graphicTextGap="8.0" layoutX="46.0" layoutY="496.0" mnemonicParsing="false" onAction="#guestReturnButtonAction" prefHeight="51.0" prefWidth="150.0" text="Return">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/logout1.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button fx:id="settingButton" focusTraversable="false" graphicTextGap="8.0" layoutX="381.0" layoutY="496.0" mnemonicParsing="false" onAction="#settingButtonAction" prefHeight="51.0" prefWidth="150.0" text="Settings">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/settings.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+
+                <AnchorPane fx:id="settingAnchorPane" layoutX="369.0" layoutY="285.0" prefHeight="245.0" prefWidth="174.0" visible="false">
+                    <children>
+                        <Button fx:id="settingReturnButton" focusTraversable="false" graphicTextGap="10.0" layoutX="12.0" layoutY="210.0" mnemonicParsing="false" onAction="#settingReturnButtonAction" prefHeight="51.0" prefWidth="150.0" text="Back">
+                            <style>
+                                -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                                -fx-text-fill: white;
+                                -fx-font-weight: bold;
+                                -fx-border-color: #FFFFFF;
+                                -fx-border-width: 2px;
+                                -fx-border-radius: 15px;
+                                -fx-background-radius: 15px;
+                                -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                            </style>
+                            <font>
+                                <Font name="Orbitron Bold Italic" size="21.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../image/icon/return.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="musicButton" focusTraversable="false" graphicTextGap="10.0" layoutX="12.0" layoutY="142.0" mnemonicParsing="false" onAction="#musicButtonAction" prefHeight="51.0" prefWidth="150.0" text="Music">
+                            <style>
+                                -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                                -fx-text-fill: white;
+                                -fx-font-weight: bold;
+                                -fx-border-color: #FFFFFF;
+                                -fx-border-width: 2px;
+                                -fx-border-radius: 15px;
+                                -fx-background-radius: 15px;
+                                -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                            </style>
+                            <font>
+                                <Font name="Orbitron Bold Italic" size="21.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fx:id="musicImage" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../image/icon/music.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="soundButton" focusTraversable="false" graphicTextGap="10.0" layoutX="12.0" layoutY="70.0" mnemonicParsing="false" onAction="#soundButtonAction" prefHeight="51.0" prefWidth="150.0" text="Sound">
+                            <style>
+                                -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                                -fx-text-fill: white;
+                                -fx-font-weight: bold;
+                                -fx-border-color: #FFFFFF;
+                                -fx-border-width: 2px;
+                                -fx-border-radius: 15px;
+                                -fx-background-radius: 15px;
+                                -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                            </style>
+                            <font>
+                                <Font name="Orbitron Bold Italic" size="21.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fx:id="soundImage" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../image/icon/sound.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="languageButton" focusTraversable="false" graphicTextGap="10.0" layoutX="3.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="170.0" text="Language">
+                            <style>
+                                -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                                -fx-text-fill: white;
+                                -fx-font-weight: bold;
+                                -fx-border-color: #FFFFFF;
+                                -fx-border-width: 2px;
+                                -fx-border-radius: 15px;
+                                -fx-background-radius: 15px;
+                                -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                            </style>
+                            <font>
+                                <Font name="Orbitron Bold Italic" size="21.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../image/icon/language.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</Pane>

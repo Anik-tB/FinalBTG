@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="loginPagePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="912.0" style="-fx-background-color: radial-gradient(center 50% 50%, radius 100%, #0d0d0d, #1a1a1a);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalbtg.ButtonHandler">
+    <children>
+        <ImageView fitHeight="624.0" fitWidth="912.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../image/bgi/bgi3.png" />
+            </image>
+        </ImageView>
+        <AnchorPane fx:id="createAccountAnchorPane" layoutY="0.0" prefHeight="624.0" prefWidth="456.0" visible="false">
+            <children>
+                <Button fx:id="loginPageSignupButton" focusTraversable="false" layoutX="160.0" layoutY="400.0" mnemonicParsing="false" onAction="#loginPageSignupButtonAction" prefHeight="55.0" prefWidth="130.0" text="Sign Up">
+                    <style>
+                        -fx-background-color: linear-gradient(#00FFFF, #008080);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #33FFFF, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                </Button>
+                <Label fx:id="createErrorMassage" alignment="CENTER" layoutX="27.0" layoutY="522.0" prefHeight="69.0" prefWidth="402.0" style="-fx-background-color: #3e3e4e; -fx-text-fill: #fafafa; -fx-border-color: #f2c8ff; -fx-border-width: 2;">
+                    <font>
+                        <Font name="System Bold" size="11.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="createUser" focusTraversable="false" layoutX="75.0" layoutY="205.0" prefHeight="40.0" prefWidth="300.0" promptText="Username" style="-fx-background-color: #2c2c3c; -fx-border-color: #f2c8ff; -fx-border-width: 1; -fx-text-fill: #fafafa;" />
+                <PasswordField fx:id="createPass" focusTraversable="false" layoutX="75.0" layoutY="272.0" prefHeight="40.0" prefWidth="300.0" promptText="Password" style="-fx-background-color: #2c2c3c; -fx-border-color: #f2c8ff; -fx-border-width: 1; -fx-text-fill: #fafafa;" />
+                <Label alignment="CENTER" layoutX="72.0" layoutY="101.0" prefHeight="70.0" prefWidth="311.0" style="-fx-border-color: #f2c8ff;" text="New Account" textFill="#f2c8ff">
+                    <font>
+                        <Font name="System Bold Italic" size="35.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="loginAccountAnchorPane" prefHeight="624.0" prefWidth="456.0">
+            <children>
+                <Label alignment="CENTER" layoutX="72.0" layoutY="101.0" prefHeight="70.0" prefWidth="311.0" style="-fx-border-color: #f2c8ff;" text="Login Account" textFill="#f2c8ff">
+                    <font>
+                        <Font name="System Bold Italic" size="35.0" />
+                    </font>
+                </Label>
+                <Button fx:id="loginPageLoginButton" focusTraversable="false" layoutX="160.0" layoutY="400.0" mnemonicParsing="false" onAction="#loginPageLoginButtonAction" prefHeight="55.0" prefWidth="130.0" text="Login">
+                    <style>
+                        -fx-background-color: linear-gradient(#00FFFF, #008080);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #33FFFF, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                </Button>
+                <Label fx:id="loginErrorMassage" alignment="CENTER" layoutX="27.0" layoutY="522.0" prefHeight="69.0" prefWidth="402.0" style="-fx-background-color: #3e3e4e; -fx-text-fill: #fafafa; -fx-border-color: #f2c8ff; -fx-border-width: 2;">
+                    <font>
+                        <Font name="System Bold" size="11.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="existUser" focusTraversable="false" layoutX="75.0" layoutY="205.0" prefHeight="40.0" prefWidth="300.0" promptText="Username" style="-fx-background-color: #2c2c3c; -fx-border-color: #f2c8ff; -fx-border-width: 1; -fx-text-fill: #fafafa;" />
+                <PasswordField fx:id="existPass" focusTraversable="false" layoutX="75.0" layoutY="272.0" prefHeight="40.0" prefWidth="300.0" promptText="Password" style="-fx-background-color: #2c2c3c; -fx-border-color: #f2c8ff; -fx-border-width: 1; -fx-text-fill: #fafafa;" />
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="toggleAnchorPane" layoutX="456.0" prefHeight="624.0" prefWidth="456.0">
+            <children>
+                <Label fx:id="toggleAnchorPaneLabel" alignment="CENTER" layoutX="42.0" layoutY="101.0" prefHeight="70.0" prefWidth="372.0" style="-fx-border-color: #f2c8ff;" text="Don't have an account?" textFill="#f2c8ff">
+                    <font>
+                        <Font name="System Bold Italic" size="27.0" />
+                    </font>
+                </Label>
+                <Button fx:id="loginPageToggleButton" alignment="CENTER" focusTraversable="false" layoutX="163.0" layoutY="312.0" mnemonicParsing="false" onAction="#loginPageToggleButtonAction" prefHeight="55.0" prefWidth="130.0" text="Sign Up">
+                    <style>
+                        -fx-background-color: linear-gradient(#00FFFF, #008080);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #33FFFF, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                </Button>
+                <Button fx:id="loginPageReturnButton" alignment="CENTER" focusTraversable="false" layoutX="163.0" layoutY="405.0" mnemonicParsing="false" onAction="#loginPageReturnButtonAction" prefHeight="55.0" prefWidth="130.0" text="Return">
+                    <style>
+                        -fx-background-color: linear-gradient(#00FFFF, #008080);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #33FFFF, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+    </children>
+</Pane>

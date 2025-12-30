@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="guestGameScreen" prefHeight="624.0" prefWidth="912.0" style="-fx-background-color: #adaaa9;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalbtg.GuestGameController">
+    <children>
+        <AnchorPane fx:id="guestGameWorld" layoutX="-1056.0" layoutY="-912.0" prefHeight="1680.0" prefWidth="2112.0" style="-fx-background-color: black;">
+            <children>
+                <ImageView fx:id="mainCharacterImage" fitHeight="32.0" fitWidth="32.0" layoutX="1488.0" layoutY="1200.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../image/sprite/down2.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="spaceship" fitHeight="143.0" fitWidth="212.0" layoutX="1411.0" layoutY="1391.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../image/spaceship.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="instructor" fitHeight="67.0" fitWidth="70.0" layoutX="1483.0" layoutY="872.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../image/instructor.gif" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="fire" fitHeight="349.0" fitWidth="386.0" layoutX="1365.0" layoutY="1240.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../image/fire.gif" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+
+
+        <Button fx:id="pauseButton" focusTraversable="false" layoutX="5.0" layoutY="5.0" mnemonicParsing="false" onAction="#pauseButtonAction" prefHeight="63.0" prefWidth="70.0">
+            <style>
+                -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                -fx-text-fill: white;
+                -fx-font-weight: bold;
+                -fx-border-color: #FFFFFF;
+                -fx-border-width: 2px;
+                -fx-border-radius: 15px;
+                -fx-background-radius: 15px;
+                -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+            </style>
+            <font>
+                <Font name="Orbitron Bold Italic" size="21.0" />
+            </font>
+            <graphic>
+                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../image/icon/pause.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <Button fx:id="bagButton" focusTraversable="false" layoutX="85.0" layoutY="5.0" mnemonicParsing="false" onAction="#bagButtonAction" prefHeight="63.0" prefWidth="70.0">
+            <style>
+                -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                -fx-text-fill: white;
+                -fx-font-weight: bold;
+                -fx-border-color: #FFFFFF;
+                -fx-border-width: 2px;
+                -fx-border-radius: 15px;
+                -fx-background-radius: 15px;
+                -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+            </style>
+            <font>
+                <Font name="Orbitron Bold Italic" size="21.0" />
+            </font>
+            <graphic>
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../image/icon/bag.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+
+
+
+        <AnchorPane fx:id="playerConditionAnchorPane" layoutX="558.0" layoutY="6.0" opacity="0.9" prefHeight="50.0" prefWidth="131.0" style="-fx-background-color: #013045; -fx-background-radius: 20; -fx-border-color: linear-gradient(to bottom, #9a00d7, #00b3ff); -fx-border-width: 3; -fx-border-radius: 20;">
+            <children>
+                <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="120.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../image/icon/health.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="oxigenLabel" alignment="CENTER" layoutX="278.0" layoutY="12.0" prefHeight="30.0" prefWidth="60.0" text="100%" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                    </font>
+                </Label>
+                <Label fx:id="healthLabel" alignment="CENTER" layoutX="159.0" layoutY="12.0" prefHeight="30.0" prefWidth="60.0" text="1200" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="40.0" fitWidth="30.0" layoutX="239.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../image/icon/oxigen.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../image/icon/attackpower.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="attackpowerLabel" alignment="CENTER" layoutX="50.0" layoutY="12.0" prefHeight="30.0" prefWidth="60.0" text="100" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+
+
+        <AnchorPane fx:id="convoAnchorpane" layoutX="130.0" layoutY="70.0" prefHeight="500.0" prefWidth="650.0" style="-fx-background-color: #013045; -fx-border-color: linear-gradient(to bottom, #9a00d7, #00b3ff); -fx-border-width: 3; -fx-background-radius: 30; -fx-border-radius: 30;" visible="false">
+            <children>
+                <Button fx:id="convoNextButton" alignment="CENTER" focusTraversable="false" layoutX="242.0" layoutY="420.0" mnemonicParsing="false" onAction="#convoNextButtonAction" prefHeight="43.0" prefWidth="168.0">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="33.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/next.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <AnchorPane fx:id="convo1" layoutX="14.0" layoutY="98.0" prefHeight="88.0" prefWidth="630.0" visible="true">
+                    <children>
+                        <ImageView fitHeight="64.0" fitWidth="48.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/instructor.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="WHITE" layoutX="76.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hey, stranger. You don't seem to belong here... How did you end up on our planet?" textAlignment="JUSTIFY" wrappingWidth="530.13671875">
+                            <font>
+                                <Font name="System Bold Italic" size="16.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="convo2" layoutX="13.0" layoutY="226.0" prefHeight="88.0" prefWidth="630.0" visible="false">
+                    <children>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="584.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/sprite/down1.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="WHITE" layoutX="14.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Well, I was exploring the galaxy when my spacecraft malfunctioned and crash-landed here. It's badly damaged, and several critical parts are destroyed. I must repair it to continue my journey." textAlignment="JUSTIFY" wrappingWidth="550.1367797851562">
+                            <font>
+                                <Font name="System Bold Italic" size="16.0" />
+                            </font></Text>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="convo3" layoutX="11.0" layoutY="50.0" prefHeight="161.0" prefWidth="630.0" visible="false">
+                    <children>
+                        <ImageView fitHeight="64.0" fitWidth="48.0" layoutX="14.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/instructor.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="WHITE" layoutX="76.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hmm, that's unfortunate. My grandfather once spoke of mysterious realms beyond the portal nearby. Legends say you might find rare artifacts and components there. However, he warned us to steer clear of it—it’s said to be teeming with fearsome creatures, and no one who ventured in has ever returned. Do you have the courage to face the unknown?" textAlignment="JUSTIFY" wrappingWidth="530.13671875">
+                            <font>
+                                <Font name="System Bold Italic" size="16.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="convo4" layoutX="11.0" layoutY="250.0" prefHeight="88.0" prefWidth="630.0" visible="false">
+                    <children>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="584.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/sprite/down1.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="WHITE" layoutX="72.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I don’t have much of a choice. If it’s the only way to fix my ship, I’ll have to take the risk." textAlignment="JUSTIFY" wrappingWidth="486.93682861328125">
+                            <font>
+                                <Font name="System Bold Italic" size="16.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="convo5" layoutX="14.0" layoutY="145.0" prefHeight="161.0" prefWidth="630.0" visible="false">
+                    <children>
+                        <ImageView fitHeight="64.0" fitWidth="48.0" layoutX="14.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/instructor.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="WHITE" layoutX="75.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Impressive resolve. Head straight ahead, and you’ll find the portal. May luck and bravery guide you." textAlignment="JUSTIFY" wrappingWidth="530.13671875">
+                            <font>
+                                <Font name="System Bold Italic" size="16.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </AnchorPane>
+            </children></AnchorPane>
+
+
+
+
+        <AnchorPane fx:id="pauseAnchorPane" layoutX="306.0" layoutY="212.0" opacity="0.95" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #013045; -fx-background-radius: 20; -fx-border-color: linear-gradient(to bottom, #9a00d7, #00b3ff); -fx-border-radius: 20; -fx-border-width: 3;" visible="false">
+            <children>
+                <Button fx:id="resumeButton" focusTraversable="false" layoutX="22.0" layoutY="23.0" mnemonicParsing="false" onAction="#resumeButtonAction" prefHeight="30.0" prefWidth="70.0">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/play.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="restartButton" focusTraversable="false" layoutX="115.0" layoutY="24.0" mnemonicParsing="false" onAction="#restartButtonAction" prefHeight="30.0" prefWidth="70.0">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/restart.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="exitButton" focusTraversable="false" layoutX="209.0" layoutY="23.0" mnemonicParsing="false" onAction="#exitButtonAction" prefHeight="30.0" prefWidth="70.0">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/logout1.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="languageButton" focusTraversable="false" layoutX="22.0" layoutY="108.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/language.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="musicButton" focusTraversable="false" layoutX="114.0" layoutY="108.0" mnemonicParsing="false" onAction="#musicButtonAction" prefHeight="30.0" prefWidth="70.0">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fx:id="musicImage" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/music.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="soundButton" focusTraversable="false" layoutX="209.0" layoutY="109.0" mnemonicParsing="false" onAction="#soundButtonAction" prefHeight="30.0" prefWidth="70.0">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="21.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fx:id="soundImage" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/sound.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+        </AnchorPane>
+
+
+
+
+        <AnchorPane fx:id="bagAnchorPane" layoutX="269.0" layoutY="130.0" opacity="0.95" prefHeight="358.0" prefWidth="400.0" style="-fx-background-color: #013045; -fx-background-radius: 20; -fx-border-color: linear-gradient(to bottom, #9a00d7, #00b3ff); -fx-border-radius: 20; -fx-border-width: 3;" visible="false">
+            <children>
+                <Label alignment="CENTER" layoutX="127.0" layoutY="16.0" prefHeight="39.0" prefWidth="232.0" style="-fx-background-color: #011b26; -fx-background-radius: 8; -fx-border-color: #015F80; -fx-border-radius: 8; -fx-border-width: 2;" text="Collected Resoursces :" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Button fx:id="bagAnchorPaneBackButton" focusTraversable="false" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#bagAnchorPaneBackButton" prefHeight="8.0" prefWidth="60.0">
+                    <style>
+                        -fx-background-color: linear-gradient(#8A2BE2, #4B0082);
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-border-color: #FFFFFF;
+                        -fx-border-width: 2px;
+                        -fx-border-radius: 15px;
+                        -fx-background-radius: 15px;
+                        -fx-effect: dropshadow(gaussian, #8A2BE2, 10, 0.7, 0, 0);
+                    </style>
+                    <font>
+                        <Font name="Orbitron Bold Italic" size="18.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/icon/return.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <AnchorPane layoutX="19.0" layoutY="73.0" prefHeight="256.0" prefWidth="366.0" style="-fx-border-color: #015F80; -fx-background-color: #011b26; -fx-border-radius: 8; -fx-border-width: 2; -fx-background-radius: 8;">
+                    <children>
+                        <Button fx:id="fireButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="102.0" prefWidth="100.0" style="-fx-background-color: #011b26; -fx-border-color: #015F80; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-width: 2;" visible="false">
+                            <graphic>
+                                <ImageView fitHeight="83.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../image/fireExtinguisher.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="nutButton" layoutX="131.0" layoutY="14.0" mnemonicParsing="false" prefHeight="102.0" prefWidth="100.0" style="-fx-background-color: #011b26; -fx-border-color: #015F80; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-width: 2;" visible="false">
+                            <graphic>
+                                <ImageView fitHeight="83.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../image/nutAndBoult.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="engineButton" layoutX="248.0" layoutY="14.0" mnemonicParsing="false" prefHeight="102.0" prefWidth="100.0" style="-fx-background-color: #011b26; -fx-border-color: #015F80; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-width: 2;" visible="false">
+                            <graphic>
+                                <ImageView fitHeight="83.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../image/engine.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="fuelButton" layoutX="14.0" layoutY="128.0" mnemonicParsing="false" prefHeight="102.0" prefWidth="100.0" style="-fx-background-color: #011b26; -fx-border-color: #015F80; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-width: 2;" visible="false">
+                            <graphic>
+                                <ImageView fitHeight="83.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../image/fuel.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="navigatorButton" layoutX="131.0" layoutY="128.0" mnemonicParsing="false" prefHeight="102.0" prefWidth="100.0" style="-fx-background-color: #011b26; -fx-border-color: #015F80; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-width: 2;" visible="false">
+                            <graphic>
+                                <ImageView fitHeight="83.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../image/communication.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="controllerButton" layoutX="248.0" layoutY="128.0" mnemonicParsing="false" prefHeight="102.0" prefWidth="100.0" style="-fx-background-color: #011b26; -fx-border-color: #015F80; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-width: 2;" visible="false">
+                            <graphic>
+                                <ImageView fitHeight="83.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../image/controller.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+
+    </children>
+</Pane>

@@ -1,0 +1,7 @@
+r,1
+resource,2,0,2
+gems,4
+weapon,400
+shield,1300
+cardPower,1100
+specialcard,2
