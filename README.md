@@ -21,11 +21,11 @@ A JavaFX-based space-themed RPG game featuring multiple game modes, multiplayer 
 
 ## 🎬 Gameplay Demo
 
-<video src="wholegame.mp4" controls autoplay muted loop width="100%">
-  Your browser does not support the video tag.
-</video>
+[![Gameplay Demo](https://img.youtube.com/vi/hDRxOb0d7O4/maxresdefault.jpg)](https://youtu.be/hDRxOb0d7O4)
 
-Watch the full gameplay demonstration to see all the features in action!
+**[▶️ Watch Full Gameplay Demo on YouTube](https://youtu.be/hDRxOb0d7O4)**
+
+Click the thumbnail above or the link to watch the complete gameplay demonstration showcasing all features in action!
 
 ## ✨ Features
 
