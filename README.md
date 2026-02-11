@@ -24,6 +24,25 @@ A JavaFX-based space-themed RPG game featuring multiple game modes, multiplayer 
 
 Click the link above to watch the complete gameplay demonstration showcasing all features in action!
 
+## 📸 Screenshots
+
+<p align="center">
+  <img src="screenshots/Screenshot 2026-02-10 212538.png" width="45%" />
+  <img src="screenshots/Screenshot 2026-02-10 212552.png" width="45%" />
+</p>
+<p align="center">
+  <img src="screenshots/Screenshot 2026-02-10 212607.png" width="45%" />
+  <img src="screenshots/Screenshot 2026-02-10 212636.png" width="45%" />
+</p>
+<p align="center">
+  <img src="screenshots/Screenshot 2026-02-10 212849.png" width="45%" />
+  <img src="screenshots/Screenshot 2026-02-10 212903.png" width="45%" />
+</p>
+<p align="center">
+  <img src="screenshots/Screenshot 2026-02-10 212931.png" width="45%" />
+  <img src="screenshots/Screenshot 2026-02-10 213124.png" width="45%" />
+</p>
+
 ## ✨ Features
 
 ### Game Modes
