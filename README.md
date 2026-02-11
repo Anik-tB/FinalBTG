@@ -22,7 +22,7 @@ A JavaFX-based space-themed RPG game featuring multiple game modes, multiplayer 
 ## 🎬 Gameplay Demo
 **[▶️ Watch Full Gameplay Demo on YouTube](https://youtu.be/hDRxOb0d7O4)**
 
-Click the thumbnail above or the link to watch the complete gameplay demonstration showcasing all features in action!
+Click the link above to watch the complete gameplay demonstration showcasing all features in action!
 
 ## ✨ Features
 
