@@ -19,6 +19,12 @@ A JavaFX-based space-themed RPG game featuring multiple game modes, multiplayer 
 
 **Beyond The Galaxy** is an immersive space adventure game where players navigate through various levels, battle monsters, collect resources, upgrade their characters, and compete against other players in real-time PvP combat. The game features a comprehensive progression system with weapons, shields, special cards, and a player-driven marketplace.
 
+## 🎬 Gameplay Demo
+
+![Gameplay Demo](wholegame.mp4)
+
+Watch the full gameplay demonstration to see all the features in action!
+
 ## ✨ Features
 
 ### Game Modes
