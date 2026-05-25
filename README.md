@@ -69,7 +69,9 @@ Click the link above to watch the complete gameplay demonstration showcasing all
 - **Sound System**: Background music and sound effects with mute controls
 
 ### Combat Features
-- **Projectile-based Combat**: Shoot projectiles in 4 directions
+- **Projectile-based Combat**: Shoot projectiles in all directions (standard 4 directions, with 8-directional and 16-directional spell patterns for card upgrades)
+- **Active Card Combat System**: Cast powerful combat spells by pressing **`E`** based on your highest owned Special Card (includes glassmorphism card slot, cooldown overlay, circular particle bursts, pulsing shields, chronos time warp time-dilation, vampiric heal, and giga laser!)
+- **Instant-Action Enemy Relocation**: Relocated initial monsters along the main path to provide instant gameplay engagement right at the starting area, and extended their player detection triggers to cover your initial spawn coordinates.
 - **Monster AI**: Intelligent enemies that track and attack the player
 - **Health & Oxygen Systems**: Manage your character's vitals
 - **Monster Respawning**: Dynamic enemy respawn mechanics
@@ -77,7 +79,7 @@ Click the link above to watch the complete gameplay demonstration showcasing all
 
 ## 🛠️ Technology Stack
 
-- **Language**: Java 23
+- **Language**: Java 23 / 25
 - **UI Framework**: JavaFX 17.0.6
 - **Game Engine**: FXGL 17.3
 - **Build Tool**: Maven
@@ -89,7 +91,7 @@ Click the link above to watch the complete gameplay demonstration showcasing all
 
 ## 📦 Prerequisites
 
-- **Java Development Kit (JDK)**: Version 23 or higher
+- **Java Development Kit (JDK)**: Version 23 / 25 or higher
 - **Maven**: Version 3.6 or higher
 - **JavaFX**: Included via Maven dependencies
 
@@ -164,9 +166,11 @@ mvn clean package
 ### Gameplay
 
 #### Controls
-- **Arrow Keys**: Move character (UP, DOWN, LEFT, RIGHT)
+- **Arrow Keys / WASD**: Move character
 - **Mouse Click**: Shoot projectiles in the direction of the cursor
-- **ESC**: Pause/Menu (if implemented)
+- **F Key**: Shoot projectile in current facing direction
+- **E Key**: Cast equipped Special Card active combat spell
+- **SPACE**: Activate speed boost (when picked up)
 
 #### Levels & Phases
 - **Level 1-3**: Story progression with increasing difficulty
@@ -235,6 +239,7 @@ FinalBTG/
 │       │   ├── Pet.java                   # Pet companion class
 │       │   ├── loginPet.java              # Pet for story levels
 │       │   ├── Projectile.java            # Projectile mechanics
+│       │   ├── CombatUpgradeHelper.java   # Active Special Card HUD slot and custom combat skills
 │       │   ├── PvpProjectile.java         # PvP projectile mechanics
 │       │   ├── Resource.java              # Resource collection
 │       │   ├── Level1Controller.java      # Level 1 UI controller
