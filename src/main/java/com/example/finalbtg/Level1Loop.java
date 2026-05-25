@@ -18,6 +18,8 @@ public class Level1Loop {
     private ImageView monsterBoomImage, projectileImage;
     private AnimationTimer gameLoop;
     private MainCharacter player;
+    private CombatUpgradeHelper combatUpgradeHelper;
+    private long frameCount = 0;
     private final Set<KeyCode> activeKeys;
     private List<ImageView> obstacles;
     private AnchorPane level1World;
@@ -80,6 +82,7 @@ public class Level1Loop {
             @Override
             public void handle(long now) {
                 if (now - lastUpdate >= 150_000_000) {
+                    frameCount++;
 
                     // Check for speed booster, oxygen and health collections......................
 
@@ -177,11 +180,15 @@ public class Level1Loop {
                     for (int i = monsterProjectiles.size() - 1; i >= 0; i--) {
                         Projectile projectile = monsterProjectiles.get(i);
                         if (projectile.isVisible()) {
-                            projectile.move();
+                            if (combatUpgradeHelper == null || !combatUpgradeHelper.isTimeWarpActive() || frameCount % 2 == 0) {
+                                projectile.move();
+                            }
 
                             if (projectile.projectileImage.getBoundsInParent().intersects(player.getCharacterImageView().getBoundsInParent())) {
                                 if (projectile.Id == 2) {
-                                    controller.decreaseHealth(10);
+                                    if (combatUpgradeHelper == null || !combatUpgradeHelper.isShieldActive()) {
+                                        controller.decreaseHealth(10);
+                                    }
                                 }
                                 projectile.setVisible(false);
                                 monsterProjectiles.remove(i);
@@ -200,6 +207,9 @@ public class Level1Loop {
                     Iterator<loginMonster> monsterIterator = monsters.iterator(); // Create iterator
                     while (monsterIterator.hasNext()) {
                         loginMonster monster = monsterIterator.next();
+                        
+                        boolean shouldMove = (combatUpgradeHelper == null || !combatUpgradeHelper.isTimeWarpActive() || frameCount % 2 == 0);
+                        
                         if (monster.monsterId == 10) {
                             if (monster.isPlayerInActivationZone(player)) {
                                 monster.getCharacterImageView().setVisible(true);
@@ -212,8 +222,10 @@ public class Level1Loop {
                                     monster.setLastAttackTime(now);
                                 }
 
-                                monster.chasePlayer(player);
-                                monster.updatePosition();
+                                if (shouldMove) {
+                                    monster.chasePlayer(player);
+                                    monster.updatePosition();
+                                }
 
                             } else {
                                 monster.getCharacterImageView().setVisible(false);
@@ -234,32 +246,35 @@ public class Level1Loop {
 
                             if (monster.monsterId == 1 || monster.monsterId == 2 || monster.monsterId == 3 || monster.monsterId == 4) {
                                 if (player.getPosX() >= 1296 && player.getPosX() <= 2068 &&
-                                        player.getPosY() >= 1248 && player.getPosY() <= 1872) {
+                                        player.getPosY() >= 1248 && player.getPosY() <= 2300) {
 
                                     if (monster.isPlayerInAttackZone(player)) {
                                         if (now - lastAttackTime >= attackCooldown) {
-
-                                            int totalDamage = 0;
-                                            for (loginMonster m : monsters) {
-                                                if (m.isAlive() && m.isPlayerInAttackZone(player)) {
-                                                    totalDamage += m.getAttackPower();
+                                            if (combatUpgradeHelper == null || !combatUpgradeHelper.isShieldActive()) {
+                                                int totalDamage = 0;
+                                                for (loginMonster m : monsters) {
+                                                    if (m.isAlive() && m.isPlayerInAttackZone(player)) {
+                                                        totalDamage += m.getAttackPower();
+                                                    }
                                                 }
+
+                                                int currentPlayerHealth = player.getHealth();
+                                                int newPlayerHealth = currentPlayerHealth - totalDamage;
+
+                                                player.setHealth(newPlayerHealth);
                                             }
-
-                                            int currentPlayerHealth = player.getHealth();
-                                            int newPlayerHealth = currentPlayerHealth - totalDamage;
-
-                                            player.setHealth(newPlayerHealth);
                                             lastAttackTime = now;
                                         }
-                                        monster.chasePlayer(player);
+                                        if (shouldMove) monster.chasePlayer(player);
                                     } else {
-                                        monster.chasePlayer(player);
+                                        if (shouldMove) monster.chasePlayer(player);
                                     }
-                                    monster.updatePosition();
+                                    if (shouldMove) monster.updatePosition();
                                 } else {
-                                    monster.idle();
-                                    monster.updatePosition();
+                                    if (shouldMove) {
+                                        monster.idle();
+                                        monster.updatePosition();
+                                    }
                                 }
                             } else if (monster.monsterId == 6 || monster.monsterId == 7 ) {
                                 if (player.getPosX() >= 192 && player.getPosX() <= 960 &&
@@ -267,27 +282,32 @@ public class Level1Loop {
 
                                     if (monster.isPlayerInAttackZone(player)) {
                                         if (now - lastAttackTime >= attackCooldown) {
-
-                                            int totalDamage = 0;
-                                            for (loginMonster m : monsters) {
-                                                if (m.isAlive() && m.isPlayerInAttackZone(player)) {
-                                                    totalDamage += m.getAttackPower();
+                                            if (combatUpgradeHelper == null || !combatUpgradeHelper.isShieldActive()) {
+                                                int totalDamage = 0;
+                                                for (loginMonster m : monsters) {
+                                                    if (m.isAlive() && m.isPlayerInAttackZone(player)) {
+                                                        totalDamage += m.getAttackPower();
+                                                    }
                                                 }
+
+                                                int currentPlayerHealth = player.getHealth();
+                                                int newPlayerHealth = currentPlayerHealth - totalDamage;
+
+                                                player.setHealth(newPlayerHealth);
                                             }
-
-                                            int currentPlayerHealth = player.getHealth();
-                                            int newPlayerHealth = currentPlayerHealth - totalDamage;
-
-                                            player.setHealth(newPlayerHealth);
                                             lastAttackTime = now;
                                         }
                                     } else {
-                                        monster.chasePlayer(player);
-                                        monster.updatePosition();
+                                        if (shouldMove) {
+                                            monster.chasePlayer(player);
+                                            monster.updatePosition();
+                                        }
                                     }
                                 } else {
-                                    monster.idle();
-                                    monster.updatePosition();
+                                    if (shouldMove) {
+                                        monster.idle();
+                                        monster.updatePosition();
+                                    }
                                 }
                             } else if (monster.monsterId == 5) { // Special case for monster 5
                                 if (player.getPosX() >= 1296 && player.getPosX() <= 2068 &&
@@ -295,45 +315,53 @@ public class Level1Loop {
 
                                     if (monster.isPlayerInAttackZone(player)) {
                                         if (now - lastAttackTime >= attackCooldown) {
-                                            int totalDamage = 0;
-                                            for (loginMonster m : monsters) {
-                                                if (m.isAlive() && m.isPlayerInAttackZone(player)) {
-                                                    if (m.monsterId == 5) {
-                                                        totalDamage += m.getAttackPower() * 2; // Double damage for monster 5
-                                                    } else {
-                                                        totalDamage += m.getAttackPower();
+                                            if (combatUpgradeHelper == null || !combatUpgradeHelper.isShieldActive()) {
+                                                int totalDamage = 0;
+                                                for (loginMonster m : monsters) {
+                                                    if (m.isAlive() && m.isPlayerInAttackZone(player)) {
+                                                        if (m.monsterId == 5) {
+                                                            totalDamage += m.getAttackPower() * 2; // Double damage for monster 5
+                                                        } else {
+                                                            totalDamage += m.getAttackPower();
+                                                        }
                                                     }
                                                 }
-                                            }
 
-                                            controller.decreaseHealth(totalDamage); // Use controller's method
+                                                controller.decreaseHealth(totalDamage); // Use controller's method
+                                            }
                                             lastAttackTime = now;
                                         }
-                                        monster.chasePlayer(player);
+                                        if (shouldMove) monster.chasePlayer(player);
                                     } else {
-                                        monster.chasePlayer(player);
+                                        if (shouldMove) monster.chasePlayer(player);
                                     }
-                                    monster.updatePosition();
+                                    if (shouldMove) monster.updatePosition();
                                 } else {
-                                    monster.idle();
-                                    monster.updatePosition();
+                                    if (shouldMove) {
+                                        monster.idle();
+                                        monster.updatePosition();
+                                    }
                                 }
                             }else {
                                 if (monster.isPlayerInAttackZone(player)) {
                                     if (now - lastAttackTime >= attackCooldown) {
-                                        int currentPlayerHealth = player.getHealth();
-                                        int monsterAttackPower = monster.getAttackPower();
-                                        int newPlayerHealth = currentPlayerHealth - monsterAttackPower;
+                                        if (combatUpgradeHelper == null || !combatUpgradeHelper.isShieldActive()) {
+                                            int currentPlayerHealth = player.getHealth();
+                                            int monsterAttackPower = monster.getAttackPower();
+                                            int newPlayerHealth = currentPlayerHealth - monsterAttackPower;
 
-                                        if (monster.monsterId != 6 || monster.monsterId != 7) {
-                                            player.setHealth(newPlayerHealth);
-                                            lastAttackTime = now;
+                                            if (monster.monsterId != 6 || monster.monsterId != 7) {
+                                                player.setHealth(newPlayerHealth);
+                                            }
                                         }
+                                        lastAttackTime = now;
                                     }
                                 } else {
                                     if (monster.isAlive()) {
-                                        monster.chasePlayer(player);
-                                        monster.updatePosition();
+                                        if (shouldMove) {
+                                            monster.chasePlayer(player);
+                                            monster.updatePosition();
+                                        }
                                     }
                                 }
                             }
@@ -482,31 +510,7 @@ public class Level1Loop {
         if (activeKeys.contains(KeyCode.F)) {
             if (!isProjectileLaunched) {
                 isProjectileLaunched = true;
-// Create a new Projectile object with a unique ID
-                ImageView projectileImage = new ImageView(new Image(getClass().getResource("/image/bullet1.gif").toExternalForm()));
-                projectileImage.setFitWidth(40);
-                projectileImage.setFitHeight(40);
-// projectileImage.setVisible(false);
-                level1World.getChildren().add(projectileImage); // Add to the scene
-                Projectile projectile = new Projectile(projectileImage, 25, player.getPosX(), player.getPosY(), 1);
-                projectile.id = projectileCount++;
-// Adjust initial projectile position based on direction
-                int projectileX = player.getPosX();
-                int projectileY = player.getPosY();
-                switch (player.getDirection()) {
-                    case "UP":
-                        projectileY -= 28; // Adjust upward offset as needed
-                        break;
-                    case "DOWN":
-                        projectileY += 20; // Adjust downward offset as needed
-                        break;
-// No need to adjust for LEFT and RIGHT
-                }
-                projectile.setPosition(projectileX, projectileY);
-                projectile.setDirection(player.getDirection());
-
-                projectiles.add(projectile);// Add the new projectile to the list
-                projectile.setVisible(true);
+                triggerPlayerShoot();
             }
         } else {
             isProjectileLaunched = false; // Reset the flag when F key is released
@@ -523,40 +527,74 @@ public class Level1Loop {
 
     }
 
+    private void triggerPlayerShoot() {
+        if (combatUpgradeHelper != null && combatUpgradeHelper.isSpreadShotActive()) {
+            String dir = player.getDirection();
+            String leftDir = "LEFT";
+            String rightDir = "RIGHT";
+            switch (dir) {
+                case "UP":
+                    leftDir = "UP_LEFT";
+                    rightDir = "UP_RIGHT";
+                    break;
+                case "DOWN":
+                    leftDir = "DOWN_LEFT";
+                    rightDir = "DOWN_RIGHT";
+                    break;
+                case "LEFT":
+                    leftDir = "DOWN_LEFT";
+                    rightDir = "UP_LEFT";
+                    break;
+                case "RIGHT":
+                    leftDir = "UP_RIGHT";
+                    rightDir = "DOWN_RIGHT";
+                    break;
+            }
+            launchPlayerProjectile(dir);
+            launchPlayerProjectile(leftDir);
+            launchPlayerProjectile(rightDir);
+        } else {
+            launchPlayerProjectile(player.getDirection());
+        }
+    }
+
+    private void launchPlayerProjectile(String dir) {
+        ImageView projectileImage = new ImageView(new Image(getClass().getResource("/image/bullet1.gif").toExternalForm()));
+        projectileImage.setFitWidth(40);
+        projectileImage.setFitHeight(40);
+        level1World.getChildren().add(projectileImage); // Add to the scene
+        
+        Projectile projectile = new Projectile(projectileImage, 25, player.getPosX(), player.getPosY(), 1);
+        projectile.id = projectileCount++;
+        
+        // Adjust initial projectile position based on direction
+        int projectileX = player.getPosX();
+        int projectileY = player.getPosY();
+        switch (dir) {
+            case "UP":
+            case "UP_LEFT":
+            case "UP_RIGHT":
+                projectileY -= 28; // Adjust upward offset as needed
+                break;
+            case "DOWN":
+            case "DOWN_LEFT":
+            case "DOWN_RIGHT":
+                projectileY += 20; // Adjust downward offset as needed
+                break;
+            // No need to adjust for LEFT and RIGHT
+        }
+        projectile.setPosition(projectileX, projectileY);
+        projectile.setDirection(dir);
+
+        projectiles.add(projectile); // Add the new projectile to the list
+        projectile.setVisible(true);
+    }
+
     private void handleMousePress(MouseEvent event) {
         if (event.getButton() == MouseButton.PRIMARY) { // Check for right-click
             if (!isProjectileLaunched) {
                 isProjectileLaunched = true;
-
-                // Create a new Projectile object with a unique ID
-                ImageView projectileImage = new ImageView(new Image(getClass().getResource("/image/bullet1.gif").toExternalForm()));
-                projectileImage.setFitWidth(40);
-                projectileImage.setFitHeight(40);
-                // projectileImage.setVisible(false);
-                level1World.getChildren().add(projectileImage); // Add to the scene
-
-                Projectile projectile = new Projectile(projectileImage, 25, player.getPosX(), player.getPosY(), 1);
-                projectile.id = projectileCount++;
-
-                // Adjust initial projectile position based on direction
-                int projectileX = player.getPosX();
-                int projectileY = player.getPosY();
-                switch (player.getDirection()) {
-                    case "UP":
-                        projectileY -= 28; // Adjust upward offset as needed
-                        break;
-                    case "DOWN":
-                        projectileY += 20; // Adjust downward offset as needed
-                        break;
-                    // No need to adjust for LEFT and RIGHT
-                }
-                projectile.setPosition(projectileX, projectileY);
-                projectile.setDirection(player.getDirection());
-
-                projectiles.add(projectile);// Add the new projectile to the list
-                projectile.setVisible(true);
-
-                // ... (rest of your projectile launching code remains the same)
+                triggerPlayerShoot();
             }
             else {
                 isProjectileLaunched = false; // Reset the flag when F key is released
@@ -789,5 +827,17 @@ public class Level1Loop {
 
     public void clearDeadMonsters() {
         deadMonsters.clear();
+    }
+
+    public List<Projectile> getProjectiles() {
+        return projectiles;
+    }
+
+    public void setCombatUpgradeHelper(CombatUpgradeHelper helper) {
+        this.combatUpgradeHelper = helper;
+    }
+
+    public CombatUpgradeHelper getCombatUpgradeHelper() {
+        return combatUpgradeHelper;
     }
 }
