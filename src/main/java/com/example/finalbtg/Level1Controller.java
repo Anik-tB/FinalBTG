@@ -17,6 +17,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -48,6 +49,7 @@ public class Level1Controller {
 
     private MainCharacter player;
     private Level1Loop level1Loop;
+    private CombatUpgradeHelper combatUpgradeHelper;
     private AnimationTimer gameLoop;
     private final Set<KeyCode> activeKeys = new HashSet<>();
     private List<ImageView> obstacles = new ArrayList<>();
@@ -209,9 +211,9 @@ public class Level1Controller {
         player = new MainCharacter(mainCharacterImage, 20, 1634, 2208, 100, 200, 1000);
         player.setGameWorld(level1World);
         //for monster
-        monsters.add(new loginMonster(monsterImage1, 15, 1994, 1408, 10, 100, 50, 1296, 1248, 2068, 1872, 1, monsterHealthBar1));
-        monsters.add(new loginMonster(monsterImage2, 15, 1934, 1548, 10, 100, 50, 1296, 1248, 2068, 1872, 2, monsterHealthBar2));
-        monsters.add(new loginMonster(monsterImage3, 15, 1994, 1648, 10, 100, 50, 1296, 1248, 2068, 1872, 3, monsterHealthBar3));
+        monsters.add(new loginMonster(monsterImage1, 15, 1634, 1968, 10, 100, 50, 1296, 1248, 2068, 2300, 1, monsterHealthBar1));
+        monsters.add(new loginMonster(monsterImage2, 15, 1538, 1968, 10, 100, 50, 1296, 1248, 2068, 2300, 2, monsterHealthBar2));
+        monsters.add(new loginMonster(monsterImage3, 15, 1730, 1968, 10, 100, 50, 1296, 1248, 2068, 2300, 3, monsterHealthBar3));
         monsters.add(new loginMonster(monsterImage4, 15, 1314, 1488, 10, 100, 50, 1296, 1248, 2068, 1872, 4, monsterHealthBar4));
         monsters.add(new loginMonster(monsterImage5, 10, 1434, 1308, 10, 100, 50, 1296, 1248, 2068, 1872, 5, monsterHealthBar5));
 
@@ -229,6 +231,13 @@ public class Level1Controller {
         addObstacles();
         level1Loop = new Level1Loop(player, activeKeys, obstacles, level1World, monsters, monsterBoomImage, this, gate);
 
+        // Active Special Card Combat Upgrade Integration
+        Pane rootPane = (Pane) level1World.getParent();
+        combatUpgradeHelper = new CombatUpgradeHelper(
+            rootPane, level1World, player, monsters, level1Loop.getProjectiles()
+        );
+        level1Loop.setCombatUpgradeHelper(combatUpgradeHelper);
+
         // --- Add this line ---
         speedBoostTimerLabel.setText(String.valueOf(speedBoostTimeRemaining));
 
@@ -241,6 +250,11 @@ public class Level1Controller {
     }
     private void handleKeyPressed(KeyEvent event) {
         activeKeys.add(event.getCode());
+        if (event.getCode() == KeyCode.E) {
+            if (combatUpgradeHelper != null) {
+                combatUpgradeHelper.castActiveAbility();
+            }
+        }
     }
 
     private void handleKeyReleased(KeyEvent event) {
@@ -460,6 +474,9 @@ public class Level1Controller {
 
     @FXML
     private void restartYesButtonAction() {
+        if (combatUpgradeHelper != null) {
+            combatUpgradeHelper.cleanup();
+        }
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("loginDashboard.fxml"));
             Scene scene = new Scene(loader.load(), 912, 624);
@@ -627,7 +644,9 @@ public class Level1Controller {
         for (loginMonster monster : monsters) { // Check collision with each monster
             if (monster.isAlive() && mainCharacterImage.getBoundsInParent().intersects(monster.getCharacterImageView().getBoundsInParent())) {
                 if (canTakeDamage) {
-                    decreaseHealth(10);
+                    if (combatUpgradeHelper == null || !combatUpgradeHelper.isShieldActive()) {
+                        decreaseHealth(10);
+                    }
                     startDamageCooldown();
                 }
             }
@@ -690,6 +709,9 @@ public class Level1Controller {
             return;
         }
         isGameOver = true;
+        if (combatUpgradeHelper != null) {
+            combatUpgradeHelper.cleanup();
+        }
         System.out.println("Game Over!");
         level1Loop.stop(); // Stop the level 1 game loop
         gameLoop.stop();
@@ -738,6 +760,9 @@ public class Level1Controller {
 
     @FXML
     private void exitButtonAction() {
+        if (combatUpgradeHelper != null) {
+            combatUpgradeHelper.cleanup();
+        }
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("loginDashboard.fxml"));
             Scene scene = new Scene(loader.load(), 912, 624);
